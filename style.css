@@ -16,7 +16,6 @@ a {
 }
 
 .topbar{
-
     background-color:#2C3E50;
     color: white;
 }
@@ -55,14 +54,30 @@ a {
 .container{
     padding: 0 15px;
     max-width: 1080px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.site{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+}
 
 .sidebar a{
     display: block;
+    width: 50%;
     text-decoration: none;
     padding: 0.6em 0;
+    border: solid 1px transparent;
+    padding-left: 10px;
+    transition: .6s
 }
 
 .sidebar a::before{
@@ -93,12 +108,106 @@ a {
 .sidebar a:hover,
 .sidebar a.active{
     color: #000;
-
+    border: solid 1px #dbdbdb;
+    background: #fff;
+    border-radius: 3px;
+    font-weight: bold;
 }
 
 .sidebar a:hover::before,
 .sidebar a.active::before{
     opacity: 1;
+}
+
+.card{
+    border: solid 1px #dbdbdb;
+    background: #fff;
+    border-radius: 3px;
+
+}
+
+.card-header{
+    padding: 10px;
+    position: relative;
+}
+
+.card-header{
+    padding-left: 65px;
+}
+
+.card-avatar{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+.card-title{
+
+    font-weight: bold;
+    color: #000;
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.card-date{
+    color: rgba(0,0,0,.38);
+    font-style: 12px;
+}
+
+.card-body{
+    padding: 0 10px 10px 10px; 
+}
+
+.card-body .full-width{
+    width: calc(100% + 20px);
+    display: block;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.card-body p:first-child{
+    margin-top: 0;
+}
+
+.card-body p:last-child{
+    margin-bottom: 0;
+}
+
+.card-footer{
+    border-top: solid 1px #dbdbdb;
+    background: #fbfbfb ;
+    display: flex;
+    padding: 10px;
+    font-size: 12px;
+    color: #bdbdbd;
+}
+
+.card-footer a{
+    text-decoration: none;
+}
+
+.card-footer a:hover{
+    text-decoration: underline;
+}
+
+
+.card-comments::before,
+.card-like::before{
+    content:'';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background: url(img/like.svg) center center / 20px 18px no-repeat;
+}
+
+.card-comments::before{
+    background: url(img/comment.svg) center center / 18px 17px no-repeat;
+}
+
+.card-comments{
+    margin-left: auto;
 }
 
 @media only screen and (min-width: 520px){
@@ -118,4 +227,34 @@ a {
     .topbar-nav{
         margin: 0 20px;
     }
+
+}
+
+@media only screen and (min-width: 950px){
+    .site{
+        display: flex;
+    }
+
+    .sidebar{
+        display: block;
+        flex:none;
+        width: 180px;
+    }
+
+    .sidebar a{
+        width: 100%;
+    }
+
+    .aside{
+        flex: none;
+        width: 310px;
+    }
+
+    .main{
+        width: 100%;
+        margin-right: 30px;
+        margin-left: 30px;
+        
+    }
+
 }
